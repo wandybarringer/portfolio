@@ -56,13 +56,16 @@ header h1::after {
   display: grid;
   gap: 2em;
   padding: 2em;
-  grid-template-areas:
-    'one two '
-    'three four'
-    'five six';
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-card {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   display: flex;
   justify-content: center;
   align-items: center;
